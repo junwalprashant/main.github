@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="main">
+        <div class="row"><h1>CLOCK</h1></div>
+    <span id="hours">00</span>
+    <span>:</span>
+    <span id="minutes">00</span>
+    <span>:</span>
+    <span id="seconds">00</span>
+    <span id="period">PM</span>
+</div>
+
+    <script>
+            function time(){
+            let clock = new Date()
+            let hr = clock.getHours()
+            let min = clock.getMinutes()
+            let sec = clock.getSeconds()
+            let period = "AM";
+
+            if (hr > 12) {
+                period = "PM";
+            }
+
+
+            if (hr > 12) {
+                hr = hr - 12;
+            }
+
+            if (hr == 0) {
+                hr = 12;
+            }
+
+            if(hr < 10){
+                hr= "0" + hr;
+            }
+
+            let hours = document.querySelector("#hours")
+            hours.innerHTML = hr;
+
+            let minutes = document.querySelector("#minutes")
+            minutes.innerHTML = min;
+
+            let seconds = document.querySelector("#seconds")
+            seconds.innerHTML = sec;
+
+            let periodElement = document.querySelector("#period");
+            periodElement.innerHTML = periode;
+        }
+     setInterval(time,1000)
+    </script>
+</body>
+</html>
